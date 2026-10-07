@@ -1,0 +1,313 @@
+/*
+ * style.css
+ * ---------------------------------------------------------------------------
+ * ET News Intelligence - editorial look.
+ *
+ * Deliberately plain: white page, black text, one bold blue accent, large bold
+ * headings. No gradients, no shadows-as-dashboard, no sidebar, no chat bubbles.
+ * The only job here is to make the news read like the front of a newspaper.
+ */
+
+:root {
+    --et-blue: #0d47a1;
+    --et-blue-dark: #08306b;
+    --et-ink: #111111;
+    --et-muted: #5a5a5a;
+    --et-rule: #111111;
+    --et-hair: #dcdcdc;
+    --et-wash: #f6f7f9;
+}
+
+html, body, [class*="css"] {
+    font-family: "Georgia", "Times New Roman", serif;
+}
+
+/* --- page frame ------------------------------------------------------- */
+.block-container {
+    max-width: 880px;
+    padding-top: 2.2rem;
+    padding-bottom: 4rem;
+    background: #ffffff;
+}
+
+.stApp {
+    background: #ffffff;
+}
+
+/* --- masthead --------------------------------------------------------- */
+.et-masthead {
+    border-bottom: 3px solid var(--et-rule);
+    padding-bottom: 0.7rem;
+    margin-bottom: 0.35rem;
+}
+
+.et-masthead h1 {
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 2.9rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--et-blue);
+    margin: 0;
+    line-height: 1.05;
+}
+
+.et-kicker {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    color: var(--et-muted);
+    margin: 0 0 0.45rem 0;
+}
+
+.et-standfirst {
+    font-size: 1.02rem;
+    line-height: 1.55;
+    color: var(--et-ink);
+    margin: 0.7rem 0 1.1rem 0;
+}
+
+.et-dateline {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.74rem;
+    color: var(--et-muted);
+    border-bottom: 1px solid var(--et-hair);
+    padding-bottom: 0.6rem;
+    margin-bottom: 1.5rem;
+}
+
+/* --- section headings ------------------------------------------------- */
+h2, h3 {
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--et-ink);
+    font-weight: 700;
+    letter-spacing: -0.2px;
+}
+
+h2 {
+    font-size: 1.6rem;
+    border-bottom: 2px solid var(--et-blue);
+    padding-bottom: 0.35rem;
+    margin-top: 1.4rem;
+}
+
+h3 {
+    font-size: 1.16rem;
+}
+
+/* --- tabs ------------------------------------------------------------- */
+/* Streamlit 1.4x+ builds tabs with react-aria, so they arrive as
+   <div role="tab"> inside [data-testid="stTabs"]. The old
+   `button[data-baseweb="tab"]` selector no longer matches anything, which
+   left the tabs in Streamlit's default red. */
+[data-testid="stTabs"] [role="tablist"] {
+    gap: 1.5rem;
+    border-bottom: 2px solid var(--et-rule);
+}
+
+[data-testid="stTabs"] [role="tab"] {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    color: var(--et-muted);
+    background: none;
+    border: none;
+    padding: 0 0 0.45rem 0;
+}
+
+[data-testid="stTabs"] [role="tab"][aria-selected="true"] {
+    color: var(--et-blue);
+    box-shadow: inset 0 -3px 0 0 var(--et-blue);
+}
+
+[data-testid="stTabs"] [role="tab"]:hover {
+    color: var(--et-blue-dark);
+}
+
+[data-testid="stTabPanel"] {
+    padding-top: 0.4rem;
+}
+
+/* --- answer block ----------------------------------------------------- */
+.et-answer {
+    background: var(--et-wash);
+    border-left: 5px solid var(--et-blue);
+    padding: 1.05rem 1.25rem;
+    margin: 0.4rem 0 1.2rem 0;
+    font-size: 1.02rem;
+    line-height: 1.62;
+    color: var(--et-ink);
+}
+
+.et-answer p {
+    margin: 0 0 0.75rem 0;
+}
+
+.et-answer p:last-child {
+    margin-bottom: 0;
+}
+
+.et-answer ul,
+.et-answer ol {
+    margin: 0 0 0.85rem 0;
+    padding-left: 1.4rem;
+}
+
+.et-answer li {
+    margin: 0 0 0.4rem 0;
+}
+
+.et-answer li::marker {
+    color: var(--et-blue);
+    font-weight: 700;
+}
+
+.et-answer strong {
+    font-weight: 700;
+}
+
+/* --- article / source list -------------------------------------------- */
+.et-item {
+    border-bottom: 1px solid var(--et-hair);
+    padding: 0.85rem 0;
+}
+
+.et-item:last-child {
+    border-bottom: none;
+}
+
+.et-item-title {
+    font-size: 1.04rem;
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--et-blue);
+    margin: 0 0 0.25rem 0;
+}
+
+.et-item-title a {
+    color: var(--et-blue);
+    text-decoration: none;
+}
+
+.et-item-title a:hover {
+    text-decoration: underline;
+}
+
+.et-item-meta {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--et-muted);
+    margin: 0 0 0.3rem 0;
+}
+
+.et-item-synopsis {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: var(--et-ink);
+    margin: 0 0 0.3rem 0;
+}
+
+.et-item-url {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.72rem;
+    color: var(--et-muted);
+    word-break: break-all;
+    margin: 0;
+}
+
+/* --- score chip -------------------------------------------------------- */
+.et-score {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: var(--et-blue-dark);
+    background: #e8eef8;
+    padding: 1px 7px;
+    margin-right: 0.5rem;
+}
+
+/* --- inputs ------------------------------------------------------------ */
+.stTextInput input, .stTextArea textarea {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.98rem;
+    border: 1px solid #b8b8b8;
+}
+
+.stTextInput input:focus, .stTextArea textarea:focus {
+    border-color: var(--et-blue);
+    box-shadow: 0 0 0 1px var(--et-blue);
+}
+
+/* Both plain buttons and form submit buttons need covering: `st.button` gets
+   the `stButton` class but `st.form_submit_button` gets `stFormSubmitButton`,
+   so a `.stButton button` rule alone left "Search the archive" white on
+   white - invisible on the white page. */
+.stButton button,
+.stFormSubmitButton button {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    background: var(--et-blue);
+    color: #ffffff;
+    border: none;
+    box-shadow: none;
+    padding: 0.55rem 1.1rem;
+}
+
+.stButton button:hover,
+.stFormSubmitButton button:hover {
+    background: var(--et-blue-dark);
+    color: #ffffff;
+    border: none;
+}
+
+.stButton button:disabled,
+.stFormSubmitButton button:disabled {
+    background: #e4e4e4;
+    color: #9a9a9a;
+}
+
+label, .stSelectbox label, .stDateInput label {
+    font-family: "Helvetica Neue", Arial, sans-serif !important;
+    font-size: 0.74rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 1.1px !important;
+    text-transform: uppercase !important;
+    color: var(--et-muted) !important;
+}
+
+/* --- status notes ------------------------------------------------------ */
+.et-note {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.78rem;
+    color: var(--et-muted);
+    border-top: 1px solid var(--et-hair);
+    padding-top: 0.5rem;
+    margin-top: 0.35rem;
+}
+
+.et-colophon {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.73rem;
+    line-height: 1.7;
+    color: var(--et-muted);
+    border-top: 3px solid var(--et-rule);
+    margin-top: 2.6rem;
+    padding-top: 0.7rem;
+}
+
+.et-colophon strong {
+    color: var(--et-ink);
+}
+
+/* Hide the Streamlit chrome we do not want in an editorial page. */
+#MainMenu, footer, header [data-testid="stStatusWidget"] {
+    visibility: hidden;
+    height: 0;
+}

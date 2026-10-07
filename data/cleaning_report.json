@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-10-05T12:42:33+00:00",
+  "input": "Data\\articles_raw.csv",
+  "output": "Data\\articles_clean.csv",
+  "articles": 22354,
+  "date_range": {
+    "oldest": "2021-01-01",
+    "newest": "2026-07-20"
+  },
+  "topics": {
+    "Latest Stories": 5136,
+    "Economy": 3351,
+    "Features": 3216,
+    "Interviews": 2894,
+    "Corporate Finance": 2450,
+    "Policy": 1470,
+    "Tax, Legal": 1230,
+    "Top Stories Today": 954,
+    "Cyber Security": 480,
+    "Leadership": 438,
+    "CFO Tech": 347,
+    "Strategy": 340,
+    "ESG": 47,
+    "Governance Risk": 1
+  },
+  "topic_count": 14,
+  "cleaning": {
+    "raw_rows": 26484,
+    "dropped_no_url_or_title": 0,
+    "duplicates_removed_url": 4130,
+    "duplicates_removed_title": 0,
+    "unparsable_dates": 0,
+    "missing_synopsis": 520
+  },
+  "seconds": 1.0
+}

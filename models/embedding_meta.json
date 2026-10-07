@@ -1,0 +1,23 @@
+{
+  "model": "qwen3-embedding:0.6b",
+  "dim": 1024,
+  "count": 22354,
+  "normalize": true,
+  "pooling": "model default (last-token for Qwen3-Embedding)",
+  "text": "title + synopsis",
+  "queryInstruction": "Given a web search query, retrieve relevant passages that answer the query",
+  "documentsCarryInstruction": false,
+  "articlesCsv": "articles_clean.csv",
+  "totalArticlesInCsv": 22354,
+  "isFullCorpus": true,
+  "selection": {
+    "limit": null,
+    "topic": null,
+    "start": null,
+    "end": null
+  },
+  "generatedAt": "2026-10-05T13:10:41Z",
+  "computeSeconds": 574.6,
+  "articlesPerSecond": 38.91,
+  "bytes": 91562112
+}

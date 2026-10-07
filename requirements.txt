@@ -1,0 +1,25 @@
+# ET News Intelligence - Python dependencies
+#
+# Install with:
+#     python -m venv .venv
+#     .venv\Scripts\python.exe -m pip install -r requirements.txt
+#
+# Versions are pinned to what this project was built and tested against.
+# streamlit and pandas are the two that actually bite: newer pandas 3.x changes
+# datetime parsing (which is why src/config.py strips trailing "IST"), and newer
+# streamlit releases have moved tab and column styling selectors.
+
+streamlit==1.61.1
+pandas==3.0.6
+numpy==2.5.3
+ollama==0.6.3
+
+# Optional. Only needed if you point the app at MySQL; the project falls back to
+# Data/articles_clean.csv when no server is reachable.
+mysql-connector-python==26.7.0
+
+# Pulled in by streamlit/pandas, listed so a fresh environment is reproducible.
+altair==6.3.0
+pyarrow==24.0.0
+python-dateutil==2.9.0.post0
+tzdata==2026.5
